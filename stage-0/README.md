@@ -34,7 +34,7 @@ uvicorn main:app --reload
 
 ### Endpoint
 
-- Base URL: `http://localhost:8000`
+- Base URL: `https://hng12-crp8.onrender.com`
 - Endpoint: `/stage-0` (GET)
 
 ### Request/Response Format
@@ -53,10 +53,10 @@ uvicorn main:app --reload
 
 ```bash
 # Using curl
-curl http://localhost:8000/stage-0
+curl https://hng12-crp8.onrender.com/stage-0
 
 # Using httpie
-http GET http://localhost:8000/stage-0
+http GET https://hng12-crp8.onrender.com/stage-0
 ```
 
 ### Related Resources
