@@ -20,7 +20,7 @@ def read_root():
     return {
         "email": "0xnuru@gmail.com",
         "current_datetime": datetime.now(timezone.utc).isoformat(),
-        "github_url": "https://github.com/0xnuru/hng12",
+        "github_url": "https://github.com/0xNuru/HNG12/tree/main/stage-0",
     }
 
 
