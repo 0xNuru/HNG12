@@ -19,7 +19,9 @@ app.add_middleware(
 def read_root():
     return {
         "email": "0xnuru@gmail.com",
-        "current_datetime": datetime.now(timezone.utc).isoformat(),
+        "current_datetime": datetime.now(timezone.utc)
+        .isoformat()
+        .replace("+00:00", "Z"),
         "github_url": "https://github.com/0xNuru/HNG12/tree/main/stage-0",
     }
 
