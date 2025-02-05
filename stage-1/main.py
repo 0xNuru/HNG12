@@ -16,13 +16,19 @@ app.add_middleware(
 
 
 @app.get("/api/classify-number", status_code=status.HTTP_200_OK)
-async def classify_number(number: str):
+async def classify_number(number: str = None):
+    if number is None:
+        return {"number": "missing", "error": True}, status.HTTP_400_BAD_REQUEST
+
     try:
         num = int(number)
     except ValueError:
         return {"number": number, "error": True}, status.HTTP_400_BAD_REQUEST
 
-    fun_fact = requests.get(f"http://numbersapi.com/{num}/math")
+    categories = ["trivia", "math", "date", "year"]
+    category = random.choice(categories)
+
+    fun_fact = requests.get(f"http://numbersapi.com/{num}/{category}")
 
     properties = [even_odd(num)]
     if armstrong(num):
