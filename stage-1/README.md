@@ -30,8 +30,8 @@ uvicorn main:app --reload
 
 ### Endpoint
 
-- Base URL: `https://hng12-crp8.onrender.com`
-- Endpoint: `/stage-0` (GET)
+- Base URL: `https://hng12-s1.onrender.com/`
+- Endpoint: `/api/classify-number` (GET)
 
 ### Request/Response Format
 
@@ -61,10 +61,10 @@ uvicorn main:app --reload
 
 ```bash
 # Using curl
-curl https://hng12-crp8.onrender.com/number/371
+curl https://hng12-s1.onrender.com/api/classify-number/371
 
 # Using httpie
-http GET https://hng12-crp8.onrender.com/number/371
+http GET https://hng12-s1.onrender.com/api/classify-number/371
 ```
 
 ### Related Resources
