@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 
-@app.get("/api/classify-number", status_code=status.HTTP_200_OK)
+@app.get("/api/classify-number")
 async def classify_number(number: str = None):
     if number is None:
         return {"number": "missing", "error": True}, status.HTTP_400_BAD_REQUEST
