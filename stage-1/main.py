@@ -70,7 +70,8 @@ def even_odd(n):
 
 
 def armstrong(n):
-    return sum(int(digit) ** 3 for digit in str(n)) == n
+    num_digits = len(str(n))
+    return sum(int(digit) ** num_digits for digit in str(n)) == n
 
 
 def digit_sum(n):
