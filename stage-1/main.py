@@ -34,7 +34,7 @@ async def classify_number(number: str = None, response: Response = None):
 
     properties = [even_odd(num)]
     if armstrong(num):
-        properties.append("armstrong")
+        properties.insert(0, "armstrong")
 
     return {
         "number": num,
