@@ -1,6 +1,6 @@
 import requests
 import random
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, Response
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -16,14 +16,16 @@ app.add_middleware(
 
 
 @app.get("/api/classify-number")
-async def classify_number(number: str = None):
+async def classify_number(number: str = None, response: Response = None):
     if number is None:
-        return {"number": "missing", "error": True}, status.HTTP_400_BAD_REQUEST
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return {"number": "missing", "error": True}
 
     try:
         num = int(number)
     except ValueError:
-        return {"number": number, "error": True}, status.HTTP_400_BAD_REQUEST
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return {"number": number, "error": True}
 
     categories = ["trivia", "math", "date", "year"]
     category = random.choice(categories)
