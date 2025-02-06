@@ -76,7 +76,3 @@ def armstrong(n):
 
 def digit_sum(n):
     return sum(int(digit) for digit in str(n))
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, reload=True, host="0.0.0.0", port=8000)
